@@ -10,7 +10,7 @@ import os
 gameWord = wordList[randint(0, 19)]
 gameWordLetters = len(gameWord)
 guessList = ''
-gameTurns = 8
+gameTurns = 9
 drawingsIndex = 0
 totalTurns = 0
 
