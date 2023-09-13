@@ -17,7 +17,7 @@
 
 - Endless mode
 
-    Get the highest score / most rounds
-    Restart with another word when win
-    3 lives (so 3 deaths) Hangman resets on death/revive (whatever u wanna call it)
-    
+  - Get the highest score / most rounds
+  - Restart with another word when win
+  - 3 lives (so 3 deaths) Hangman resets on death/revive (whatever u wanna call it)
+  - Make a score system with global highscore board (if possible)
