@@ -3,7 +3,7 @@
 
 - On turn 1, always adds 1 drawing (so the rope always appear the answer being correct or wrong)
 - Never counts the first error (for some reason i mean wtf)
-- Make more words (GPT or .js file with modifier dictionnary)
+- Make more words (GPT or .js file with modified dictionnary)
 - Limit input to one letters
 
 ---------|Ideas|---------
