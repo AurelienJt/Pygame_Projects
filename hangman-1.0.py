@@ -45,10 +45,10 @@ clearTerminal()
 
 #------------- GAME -------------#
 
-print ("\n-------------------------------------------------------------------------\n")
-print(startDrawing,"\n")
-print("Your word has", gameWordLetters, "letters")
-print("\nYour guesses were :", guessList, "\n")
+#print ("\n-------------------------------------------------------------------------\n")
+#print(startDrawing,"\n")
+#print("Your word has", gameWordLetters, "letters")
+#print("\nYour guesses were :", guessList, "\n")
 
 while gameTurns > 0:
     failedGuesses = 0
