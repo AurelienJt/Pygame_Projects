@@ -82,6 +82,7 @@ while gameTurns > 0:
     print ("\n-------------------------------------------------------------------------\n")
     print(drawings[drawingsIndex],"\n")
     print("DI:", drawingsIndex)
+    print("GT:", gameTurns)
     print("Your word has", gameWordLetters, "letters")
     print("\nYour guesses were :", guessList, "\n")
 
