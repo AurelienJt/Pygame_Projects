@@ -1,4 +1,20 @@
 ---------|To do List|---------
 
 - On turn 1, always adds 1 drawing (so the rope always appear the answer being correct or wrong)
-- xmx
+- Never counts the first error (for some reason i mean wtf)
+- Make more words (GPT or .js file with modifier dictionnary)
+- Limit input to one letters
+- Implement high scores (global leaderboard if possible?)
+
+---------|Ideas|---------
+
+- 2 player mode
+
+    1v1, p1 chooses a word and p2 guesses it
+    p1 wins if p2 fails
+    They exchange positions at the end of a round
+    Best of 5 or first to 3 positions
+
+- Endless mode ?
+
+    
