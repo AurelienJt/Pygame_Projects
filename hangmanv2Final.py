@@ -77,6 +77,8 @@ while gameTurns > 0:
     clearTerminal()
     print ("\n-------------------------------------------------------------------------\n")
     print(drawings[drawingsIndex],"\n")
+    print("DI:", drawingsIndex)
+    print("FG:", failedGuesses)
     print("Your word has", gameWordLetters, "letters")
     print("\nYour guesses were :", guessList, "\n")
 
