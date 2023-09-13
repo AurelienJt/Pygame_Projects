@@ -20,6 +20,7 @@ os.system('clear')
 
 print("\n- Welcome to Hangman !\n")
 time.sleep(1)
+print(gameWord, "\n")
 playerName = str(input("- Please tell me, what is your name ?\n\n"))
 time.sleep(0.5)
 print("\n- Ah I see. Pleased to meet you", playerName.capitalize(), "!\n\n~Press [Enter] to continue~")
@@ -78,7 +79,6 @@ while gameTurns > 0:
     print ("\n-------------------------------------------------------------------------\n")
     print(drawings[drawingsIndex],"\n")
     print("DI:", drawingsIndex)
-    print("FG:", failedGuesses)
     print("Your word has", gameWordLetters, "letters")
     print("\nYour guesses were :", guessList, "\n")
 
@@ -89,6 +89,6 @@ while gameTurns > 0:
         print ("You have", + gameTurns, "guesses left !\n")
  
         if gameTurns == 0:
-            print ("\nYou killed him, what a horrible person you are...\nThe word was", gameWord)
+            print ("You killed him, what a horrible person you are...\nThe word was", gameWord, "\n")
 
 #-------- Made by _N1ghtW0lf --------#
