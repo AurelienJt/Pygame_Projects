@@ -75,7 +75,7 @@ while gameTurns > 0:
     if len(guessLetter) > 1:
         print("Only insert one character please.")
         exit()
-    guessList += guessLetter                    
+    guessList += guessLetter             
     totalTurns += 1
 
     clearTerminal()
