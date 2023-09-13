@@ -4,7 +4,8 @@
 - ~~On turn 1, always adds 1 drawing (so the rope always appear the answer being correct or wrong)~~
 - Never counts the first error (for some reason i mean wtf)
 - Make more words (GPT or .js file with modified dictionnary)
-- Limit input to one letters
+- Limit input to one letter
+    - This can be fixed easily, fix is on the way
 - Fix the print(guessList), aka make it print a letter then a comma then space
 
 
