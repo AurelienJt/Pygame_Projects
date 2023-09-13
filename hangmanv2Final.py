@@ -19,7 +19,6 @@ os.system('clear')
 
 
 print("\n- Welcome to Hangman !\n")
-print(gameWord)
 time.sleep(1)
 playerName = str(input("- Please tell me, what is your name ?\n\n"))
 time.sleep(0.5)
@@ -43,6 +42,7 @@ clearTerminal()
 print("\n- Well, let's play !\n")
 time.sleep(0.5)
 clearTerminal()
+
 #------------- GAME -------------#
 
 print ("\n-------------------------------------------------------------------------\n")
@@ -88,3 +88,5 @@ while gameTurns > 0:
  
         if gameTurns == 0:
             print ("\nYou killed him, what a horrible person you are...\nThe word was", gameWord)
+
+#-------- Made by _N1ghtW0lf --------#
