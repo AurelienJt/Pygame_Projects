@@ -71,7 +71,10 @@ while gameTurns > 0:
         
         break            
 
-    guessLetter = input("\n\nGuess a character or a word : ")
+    guessLetter = input("\n\nGuess a character : ")
+    if len(guessLetter) > 1:
+        print("Only insert one character please.")
+        exit()
     guessList += guessLetter                    
     totalTurns += 1
 
