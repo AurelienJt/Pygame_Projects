@@ -1,4 +1,4 @@
-#READ ME
+# READ ME
 ---------|Fix #1|---------
 
 - On turn 1, always adds 1 drawing (so the rope always appear the answer being correct or wrong)
