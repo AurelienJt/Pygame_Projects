@@ -39,7 +39,7 @@ if answer == 2:
 
 
 clearTerminal()
-#loadingDots()
+loadingDots()
 print("\n- Well, let's play !\n")
 time.sleep(0.5)
 clearTerminal()
