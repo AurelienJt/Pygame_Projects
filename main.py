@@ -1,6 +1,6 @@
 import pygame
 from sys import exit
-from Buttons import *
+from Libraries.Lib_General.Buttons import LayeredButton
 
 pygame.init()
 
