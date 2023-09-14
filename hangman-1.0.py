@@ -2,7 +2,7 @@
 
 from random import *
 import time
-from hangmanLib import *
+from Libraries.hangmanLib import *
 import os
 
 #---------- VARIABLES ----------#
