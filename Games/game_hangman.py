@@ -1,13 +1,13 @@
 #----------- IMPORTS -----------#
 
-from random import *
+from random import randint
 import time
-from Libraries.hangmanLib import *
+from Libraries.Lib_Hangman.lib_hangman import *
 import os
 import json
 
 #----------- Init -----------#
-dictionnary_path = "Libraries/dictionnary.json"
+dictionnary_path = "Libraries/Lib_Hangman/lib_dict_hangman.json"
 
 with open(file=dictionnary_path,mode="r") as file:
     wordList = json.load(file)
