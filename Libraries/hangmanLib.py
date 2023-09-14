@@ -1,8 +1,8 @@
 import time
 import os
 
-guessLetter = "x"
-gameWord = "xxx"
+guessLetter = ""
+gameWord = ""
 
 startDrawing ="""
   +----+
