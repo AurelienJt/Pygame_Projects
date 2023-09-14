@@ -1,10 +1,9 @@
 import time
 import os
 
+
 guessLetter = "x"
 gameWord = "xxx"
-
-wordList = ["apple", "banana", "cat", "dog", "fish", "house", "jump", "kite", "lemon", "mouse", "panda", "queen", "rabbit", "snake", "turtle", "unicorn", "violin", "water", "xylophone", "zebra"]
 
 startDrawing ="""
   +----+
