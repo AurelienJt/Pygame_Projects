@@ -4,10 +4,17 @@ from random import *
 import time
 from Libraries.hangmanLib import *
 import os
+import json
+
+#----------- Init -----------#
+dictionnary_path = "Libraries/dictionnary.json"
+
+with open(file=dictionnary_path,mode="r") as file:
+    wordList = json.load(file)
 
 #---------- VARIABLES ----------#
 
-gameWord = wordList[randint(0, 19)]
+gameWord = wordList[randint(0,len(wordList)-1)]
 gameWordLetters = len(gameWord)
 guessList = ''
 gameTurns = 9
