@@ -1,7 +1,6 @@
 import time
 import os
 
-
 guessLetter = "x"
 gameWord = "xxx"
 

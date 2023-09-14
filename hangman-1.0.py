@@ -82,13 +82,14 @@ while gameTurns > 0:
     if len(guessLetter) > 1:
         print("Only insert one character please.")
         exit()
-    guessList += guessLetter                    
+    guessList += guessLetter             
     totalTurns += 1
 
     clearTerminal()
     print ("\n-------------------------------------------------------------------------\n")
     print(drawings[drawingsIndex],"\n")
     print("DI:", drawingsIndex)
+    print("GT:", gameTurns)
     print("Your word has", gameWordLetters, "letters")
     print("\nYour guesses were :", guessList, "\n")
 
