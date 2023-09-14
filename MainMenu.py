@@ -27,7 +27,7 @@ while running:
     if currentMenu == "MainMenu":
         pygame.display.set_caption("MAIN MENU")
         win.fill((41,43,47)) # MainMenu Color
-        win.blit(pygame.font.SysFont("arialblack", 60).render("UNBLOCKED HUB", True, (255,255,255)), (300, 50)) # TITLE
+        win.blit(pygame.font.SysFont("arialblack", 60).render("PYPROJECTS HUB", True, (255,255,255)), (300, 50)) # TITLE
         win.blit(pygame.font.SysFont("impact", 30).render(str(int(clock.get_fps())), True, (237, 206, 104)), (10, 10)) # FPS
         
         if gamesButton.draw(win):
