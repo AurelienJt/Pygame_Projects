@@ -1,6 +1,6 @@
 # Project Game.Py
 
-*This project is aimed to create custom minor 100% python based minigames easily executable on any machine.
+*This project is aimed to create custom minor 100% python based minigames easily executable on any machine.*
 
 ## How does it work?
 
