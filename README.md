@@ -1,4 +1,4 @@
-# Project Game.Py
+# Game.Py
 
 *This project is aimed to create custom minor 100% python based minigames easily executable on any machine.*
 
