@@ -59,7 +59,7 @@ clearTerminal()
 #print("\nYour guesses were :", guessList, "\n")
 
 while gameTurns > 0:
-    failedGuesses = 0
+    unknownLetters = 0
 
     for characters in gameWord:        
         if characters in guessList:
@@ -67,9 +67,9 @@ while gameTurns > 0:
 
         else :
             print("_ ", end="")
-            failedGuesses += 1
+            unknownLetters += 1
 
-    if failedGuesses == 0:
+    if unknownLetters == 0:
         clearTerminal()
 
         print ("\n-------------------------------------------------------------------------")
