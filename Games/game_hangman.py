@@ -10,11 +10,11 @@ from Libraries.Lib_Hangman.lib_hangman import clearTerminal,game_rules,loadingDo
 dictionnary_path = "Libraries/Lib_Hangman/lib_dict_hangman.json"
 
 with open(file=dictionnary_path,mode="r") as file:
-    wordList = json.load(file)
+    word_list = json.load(file)
 
 #---------- VARIABLES ----------#
 
-game_word = wordList[randint(0,len(wordList)-1)]
+game_word = word_list[randint(0,len(word_list)-1)]
 game_word_letters = len(game_word)
 guess_list = ''
 game_turns = 9
