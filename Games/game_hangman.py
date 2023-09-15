@@ -4,7 +4,7 @@ import time
 import os
 import json
 from random import randint
-from Libraries.Lib_Hangman.lib_hangman import clearTerminal,gameRules,loadingDots,winDrawing,drawings
+from Libraries.Lib_Hangman.lib_hangman import clearTerminal,game_rules,loadingDots,win_drawing,drawings
 
 #----------- Init -----------#
 dictionnary_path = "Libraries/Lib_Hangman/lib_dict_hangman.json"
@@ -14,12 +14,12 @@ with open(file=dictionnary_path,mode="r") as file:
 
 #---------- VARIABLES ----------#
 
-gameWord = wordList[randint(0,len(wordList)-1)]
-gameWordLetters = len(gameWord)
-guessList = ''
-gameTurns = 9
-drawingsIndex = 0
-totalTurns = 0
+game_word = wordList[randint(0,len(wordList)-1)]
+game_word_letters = len(game_word)
+guess_list = ''
+game_turns = 9
+drawings_index = 0
+total_turns = 0
 
 #------------- MAIN -------------#
 os.system('clear')
@@ -27,10 +27,10 @@ os.system('clear')
 
 print("\n- Welcome to Hangman !\n")
 time.sleep(1)
-print(gameWord, "\n")
-playerName = str(input("- Please tell me, what is your name ?\n\n"))
+print(game_word, "\n")
+player_name = str(input("- Please tell me, what is your name ?\n\n"))
 time.sleep(0.5)
-print("\n- Ah I see. Pleased to meet you", playerName.capitalize(), "!\n\n~Press [Enter] to continue~")
+print("\n- Ah I see. Pleased to meet you", player_name.capitalize(), "!\n\n~Press [Enter] to continue~")
 str(input())
 
 clearTerminal()
@@ -41,7 +41,7 @@ if answer == 2:
     clearTerminal()
 
     print("\n- Here are the rules !\n")
-    print(gameRules, "\n~Press [Enter] to continue~\n")
+    print(game_rules, "\n~Press [Enter] to continue~\n")
     str(input())
 
 
@@ -55,51 +55,51 @@ clearTerminal()
 
 #print ("\n-------------------------------------------------------------------------\n")
 #print(startDrawing,"\n")
-#print("Your word has", gameWordLetters, "letters")
-#print("\nYour guesses were :", guessList, "\n")
+#print("Your word has", game_word_letters, "letters")
+#print("\nYour guesses were :", guess_list, "\n")
 
-while gameTurns > 0:
-    unknownLetters = 0
+while game_turns > 0:
+    unknown_letters = 0
 
-    for characters in gameWord:        
-        if characters in guessList:
+    for characters in game_word:        
+        if characters in guess_list:
             print(characters + " ", end="")
 
         else :
             print("_ ", end="")
-            unknownLetters += 1
+            unknown_letters += 1
 
-    if unknownLetters == 0:
+    if unknown_letters == 0:
         clearTerminal()
 
         print ("\n-------------------------------------------------------------------------")
-        print(winDrawing, "\n")
-        print("Good job, you won in", totalTurns, "turns !! \nThe word was", gameWord, "\n\n")
+        print(win_drawing, "\n")
+        print("Good job, you won in", total_turns, "turns !! \nThe word was", game_word, "\n\n")
         
         break            
 
-    guessLetter = input("\n\nGuess a character : ")
-    if len(guessLetter) > 1:
+    guess_letter = input("\n\nGuess a character : ")
+    if len(guess_letter) > 1:
         print("Only insert one character please.")
         exit()
-    guessList += guessLetter             
-    totalTurns += 1
+    guess_list += guess_letter             
+    total_turns += 1
 
     clearTerminal()
     print ("\n-------------------------------------------------------------------------\n")
-    print(drawings[drawingsIndex],"\n")
-    print("DI:", drawingsIndex)
-    print("GT:", gameTurns)
-    print("Your word has", gameWordLetters, "letters")
-    print("\nYour guesses were :", guessList, "\n")
+    print(drawings[drawings_index],"\n")
+    print("DI:", drawings_index)
+    print("GT:", game_turns)
+    print("Your word has", game_word_letters, "letters")
+    print("\nYour guesses were :", guess_list, "\n")
 
-    if guessLetter not in gameWord:  
-        gameTurns -= 1     
-        drawingsIndex += 1   
+    if guess_letter not in game_word:  
+        game_turns -= 1     
+        drawings_index += 1   
         print ("Bummer, you're wrong..")  
-        print ("You have", + gameTurns, "guesses left !\n")
+        print ("You have", + game_turns, "guesses left !\n")
  
-        if gameTurns == 0:
-            print ("You killed him, what a horrible person you are...\nThe word was", gameWord, "\n")
+        if game_turns == 0:
+            print ("You killed him, what a horrible person you are...\nThe word was", game_word, "\n")
 
 #-------- Made by _N1ghtW0lf --------#

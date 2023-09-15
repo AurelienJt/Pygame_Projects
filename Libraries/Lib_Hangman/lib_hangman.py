@@ -87,13 +87,13 @@ drawings = ["""
 =========
 """]
 
-winDrawing = """
+win_drawing = """
   \🥳/   
    | 
   / \ 
 """
 
-gameRules = """
+game_rules = """
 --------------------------------- Rules ---------------------------------
 
   - You have to guess a word in a limited amount of errors
