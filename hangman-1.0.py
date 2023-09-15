@@ -1,10 +1,10 @@
 #----------- IMPORTS -----------#
 
-from random import *
 import time
-from Libraries.hangmanLib import *
 import os
 import json
+from random import randint
+from Libraries.Lib_Hangman.lib_hangman import clearTerminal,gameRules,loadingDots,winDrawing,drawings
 
 #----------- Init -----------#
 dictionnary_path = "Libraries/dictionnary.json"
