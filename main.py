@@ -1,6 +1,6 @@
 import pygame
 from sys import exit
-from Libraries.Lib_General.Buttons import LayeredButton
+from Libraries.Lib_General.lib_button import LayeredButton
 
 pygame.init()
 
@@ -14,25 +14,25 @@ clock = pygame.time.Clock()
 FPS = 60
 
 # user interface
-menuButtonFont = pygame.font.SysFont("arialblack", 40)
-gamesButton = LayeredButton("games", 500, 80, (350, 220), 5, menuButtonFont, (41,43,47), (100, 100, 100), (41,43,47))
-creditsButton = LayeredButton("credits", 500, 80, (350, 420), 5, menuButtonFont, (41,43,47), (100,100,100), (41,43,47))
+menu_button_font = pygame.font.SysFont("arialblack", 40)
+games_button = LayeredButton("games", 500, 80, (350, 220), 5, menu_button_font, (41,43,47), (100, 100, 100), (41,43,47))
+credits_button = LayeredButton("credits", 500, 80, (350, 420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
 
 # general variables
-currentMenu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
+current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
 
 
 running = True
 while running:
-    if currentMenu == "MainMenu":
+    if current_menu == "MainMenu":
         pygame.display.set_caption("MAIN MENU")
         win.fill((41,43,47)) # MainMenu Color
         win.blit(pygame.font.SysFont("arialblack", 60).render("PYPROJECTS HUB", True, (255,255,255)), (300, 50)) # TITLE
         win.blit(pygame.font.SysFont("impact", 30).render(str(int(clock.get_fps())), True, (237, 206, 104)), (10, 10)) # FPS
         
-        if gamesButton.draw(win):
+        if games_button.draw(win):
             pass
-        if creditsButton.draw(win):
+        if credits_button.draw(win):
             pass
 
     for event in pygame.event.get():
