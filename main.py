@@ -19,15 +19,15 @@ games_button = LayeredButton("games", 500, 80, (350, 220), 5, menu_button_font, 
 credits_button = LayeredButton("credits", 500, 80, (350, 420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
 
 # general variables
-current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
+current_menu = "main_enu" # MainMenu, Hangman, Tetris, etc...
 
 
 running = True
 while running:
-    if current_menu == "MainMenu":
-        pygame.display.set_caption("MAIN MENU")
+    if current_menu == "main_enu":
+        pygame.display.set_caption("Main Menu")
         win.fill((41,43,47)) # MainMenu Color
-        win.blit(pygame.font.SysFont("arialblack", 60).render("PYPROJECTS HUB", True, (255,255,255)), (300, 50)) # TITLE
+        win.blit(pygame.font.SysFont("arialblack", 60).render("Games.Py", True, (255,255,255)), (300, 50)) # TITLE
         win.blit(pygame.font.SysFont("impact", 30).render(str(int(clock.get_fps())), True, (237, 206, 104)), (10, 10)) # FPS
         
         if games_button.draw(win):
