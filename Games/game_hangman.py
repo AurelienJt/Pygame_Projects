@@ -7,7 +7,7 @@ from random import randint
 from Libraries.Lib_Hangman.lib_hangman import clearTerminal,game_rules,loadingDots,win_drawing,drawings
 
 #----------- Init -----------#
-dictionnary_path = "Libraries/Lib_Hangman/lib_dict_hangman.json"
+dictionnary_path = os.path.join("Libraries", "Lib_Hangman","lib_dict_hangman.json")
 
 with open(file=dictionnary_path,mode="r") as file:
     word_list = json.load(file)
