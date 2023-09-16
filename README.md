@@ -14,7 +14,7 @@ Simply execute the `main.py` file in order to start the program.
 
 You can install all dependencies by running the setup.sh script.
 
-\> ``./setup.sh``
+\> ``sh ./setup.sh``
 
 As of now the dependencies are:
 - pygame
