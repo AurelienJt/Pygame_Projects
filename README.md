@@ -12,8 +12,11 @@ Simply execute the `main.py` file in order to start the program.
 
 ## Dependencies
 
-Dependencies correspond to the "libraries" you need to "import". In install all required libraries, use pip3. Current dependencies are:
+You can install all dependencies by running the setup.sh script.
 
+\> ``sh ./setup.sh``
+
+As of now the dependencies are:
 - pygame
 
 ## Roadmaps
