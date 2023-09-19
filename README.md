@@ -10,7 +10,7 @@ We currently don't have any official releases, so:
 - Run main.py: `python3 main.py`
 
 # Current Contributors
-- [AxeQuilPre](https://github.com/AxaQuilPre)
+- [AxaQuilPre](https://github.com/AxaQuilPre)
 - [OrnitOnGithub](https://github.com/OrnitOnGithub)
 - [DrN1ghtW0lf](https://github.com/DrN1ghtW0lf)
 - [andrei73457](https://github.com/andrei73457)
