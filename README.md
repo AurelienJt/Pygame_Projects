@@ -1,4 +1,4 @@
-# Games.Py
+# GameHub.Py
 Games.Py (this name mid asf ngl) is a repository of python games meant to be executable on any machine.
 
 # Quick Start Guide
