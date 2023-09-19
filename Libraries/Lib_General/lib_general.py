@@ -19,10 +19,11 @@ def button_pos(postiton, win,button_width=None,button_height=None):
     """
     Creats relative position for buttons.
 
-    - x_mid_left: Center left x values
+    - x_center_left: Center left x value
+    - x_center_right: Center right x value
     """
     if postiton == "x_center_left":
         return (win.get_width()//3)-(button_width//2)
     
-    if postiton == "x_center_right":
+    elif postiton == "x_center_right":
         return (win.get_width()//3*2)-(button_width//2)

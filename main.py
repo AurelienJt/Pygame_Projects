@@ -28,6 +28,7 @@ menu_title = menu_title_font.render("MultiGameBox", True, (255,255,255))
 # general variables
 current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
 previous_menu = ""
+surface = Surface(win)
 
 running = True
 while running:
@@ -48,7 +49,8 @@ while running:
 
     if current_menu == "GameSelector":
         win.fill((41,43,47)) # MainMenu Color
-        surface = Surface(win)
+        surface.render()
+
         
         win.blit(surface.surface,(0,0))
 
