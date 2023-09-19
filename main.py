@@ -23,9 +23,6 @@ menu_title_font = pygame.font.SysFont("arialblack", 60)
 games_button = LayeredButton("Game Library", 500, 80, (350, 220), 5, menu_button_font, (41,43,47), (100, 100, 100), (41,43,47))
 credits_button = LayeredButton("Credits", 500, 80, (350 ,420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
 
-
-honai_button = LayeredButton("Honai",250,90,(button_pos("x_center_left",win,250),80),5,menu_button_font,(41,43,47), (100,100,100), (41,43,47))
-
 menu_title = menu_title_font.render("MultiGameBox", True, (255,255,255))
 
 # general variables

@@ -23,3 +23,6 @@ def button_pos(postiton, win,button_width=None,button_height=None):
     """
     if postiton == "x_center_left":
         return (win.get_width()//3)-(button_width//2)
+    
+    if postiton == "x_center_right":
+        return (win.get_width()//3*2)-(button_width//2)
