@@ -1,10 +1,10 @@
-# MinigameBox
-Games.Py (this name mid asf ngl) is a repository of python games meant to be executable on any machine.
+# Pygame_Projects
+Pygame_Projects (this name mid asf ngl) is a repository of python games meant to be executable on any machine.
 
 # Quick Start Guide
 We currently don't have any official releases, so:
 - Note: `main.py` is broken rn
-- Download the repo: `git clone https://github.com/AxaQuilPre/Games.Py`
+- Download the repo: `git clone https://github.com/AxaQuilPre/Pygame_Projects`
 - Open the folder in VS Code.
 - Run the setup script: `sh ./setup.sh` (This downloads the dependencies)
 - Run main.py: `python3 main.py`
