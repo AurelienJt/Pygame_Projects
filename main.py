@@ -2,6 +2,7 @@ import pygame
 from sys import exit
 from Libraries.Lib_General.lib_button import LayeredButton
 from Libraries.Lib_General.lib_general import text_pos,button_pos
+from test import Surface
 
 pygame.init()
 
@@ -21,7 +22,9 @@ menu_button_font = pygame.font.SysFont("arialblack", 40)
 menu_title_font = pygame.font.SysFont("arialblack", 60)
 games_button = LayeredButton("Game Library", 500, 80, (350, 220), 5, menu_button_font, (41,43,47), (100, 100, 100), (41,43,47))
 credits_button = LayeredButton("Credits", 500, 80, (350 ,420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
-honai_button = LayeredButton("Honai",250,90,(button_pos("x_center_left",win,250),40),5,menu_button_font,(41,43,47), (100,100,100), (41,43,47))
+
+
+honai_button = LayeredButton("Honai",250,90,(button_pos("x_center_left",win,250),80),5,menu_button_font,(41,43,47), (100,100,100), (41,43,47))
 
 menu_title = menu_title_font.render("MultiGameBox", True, (255,255,255))
 
@@ -48,8 +51,12 @@ while running:
 
     if current_menu == "GameSelector":
         win.fill((41,43,47)) # MainMenu Color
-        if honai_button.draw(win):
-            pass
+        surface = Surface(win)
+        
+        win.blit(surface.surface,(0,0))
+
+        # if honai_button.draw(win):
+        #     pass
 
 
     for event in pygame.event.get():
