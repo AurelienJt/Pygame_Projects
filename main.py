@@ -23,7 +23,7 @@ credits_button = LayeredButton("Credits", 500, 80, (350, 420), 5, menu_button_fo
 menu_title = menu_title_font.render("Games.Py", True, (255,255,255))
 
 # general variables
-current_menu = "main_enu" # MainMenu, Hangman, Tetris, etc...
+current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
 
 running = True
 while running:
