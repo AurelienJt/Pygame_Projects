@@ -1,7 +1,7 @@
 import pygame
 from sys import exit
 from Libraries.Lib_General.lib_button import LayeredButton
-from Libraries.Lib_General.lib_general import text_pos
+from Libraries.Lib_General.lib_general import text_pos,button_pos
 
 pygame.init()
 
@@ -14,16 +14,20 @@ win = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 FPS = 60
 
+# print(button_pos("x_center_left",win))
+
 # user interface
 menu_button_font = pygame.font.SysFont("arialblack", 40)
 menu_title_font = pygame.font.SysFont("arialblack", 60)
 games_button = LayeredButton("Game Library", 500, 80, (350, 220), 5, menu_button_font, (41,43,47), (100, 100, 100), (41,43,47))
-credits_button = LayeredButton("Credits", 500, 80, (350, 420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
+credits_button = LayeredButton("Credits", 500, 80, (350 ,420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
+honai_button = LayeredButton("Honai",250,90,(button_pos("x_center_left",win,250),40),5,menu_button_font,(41,43,47), (100,100,100), (41,43,47))
 
-menu_title = menu_title_font.render("Games.Py", True, (255,255,255))
+menu_title = menu_title_font.render("MultiGameBox", True, (255,255,255))
 
 # general variables
 current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
+previous_menu = ""
 
 running = True
 while running:
@@ -36,9 +40,17 @@ while running:
         win.blit(pygame.font.SysFont("impact", 30).render(str(int(clock.get_fps())), True, (237, 206, 104)), (10, 10)) # FPS
         
         if games_button.draw(win):
-            pass
+            previous_menu = current_menu
+            current_menu = "GameSelector"
+            
         if credits_button.draw(win):
             pass
+
+    if current_menu == "GameSelector":
+        win.fill((41,43,47)) # MainMenu Color
+        if honai_button.draw(win):
+            pass
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
