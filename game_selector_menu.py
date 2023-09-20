@@ -3,10 +3,12 @@ from Libraries.Lib_General.lib_general import text_pos, button_pos
 from Libraries.Lib_General.lib_button import LayeredButton
 
 
-class Surface:
+class Game_Selector:
     def __init__(self, window):
         # General
-        menu_id = "GameSelector"
+        self.menu_id = "GameSelector"
+        self.current_menu = self.menu_id
+        
         game_menu_button_font = pygame.font.SysFont("impact", 40)
         row_1 = 150
         # Init
@@ -14,7 +16,7 @@ class Surface:
         self.surface.fill((41, 43, 47))
         self.text_font = pygame.font.SysFont("arialblack", 40)
         # UI Elements
-        self.text = self.text_font.render("Testing Surface", True, (255, 255, 255))
+        self.text = self.text_font.render("Game Selector", True, (255, 255, 255))
         self.game_honai_button = LayeredButton(
             "Honai",
             200,
@@ -42,6 +44,7 @@ class Surface:
         #Rendering
         self.surface.blit(self.text, (text_pos("x_center", self.surface, self.text),60))
         if self.game_honai_button.draw(self.surface):
-                pass
+            pass
         if self.game_hangman_button.draw(self.surface):
             pass
+        

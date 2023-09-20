@@ -2,7 +2,8 @@ import pygame
 from sys import exit
 from Libraries.Lib_General.lib_button import LayeredButton
 from Libraries.Lib_General.lib_general import text_pos,button_pos
-from test import Surface
+from game_selector_menu import Game_Selector
+from main_menu import Main_Menu
 
 pygame.init()
 
@@ -15,45 +16,28 @@ win = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 FPS = 60
 
-# print(button_pos("x_center_left",win))
-
-# user interface
-menu_button_font = pygame.font.SysFont("arialblack", 40)
-menu_title_font = pygame.font.SysFont("arialblack", 60)
-games_button = LayeredButton("Game Library", 500, 80, (350, 220), 5, menu_button_font, (41,43,47), (100, 100, 100), (41,43,47))
-credits_button = LayeredButton("Credits", 500, 80, (350 ,420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
-
-menu_title = menu_title_font.render("Pygame Projects", True, (255,255,255))
-
 # general variables
 current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
 previous_menu = ""
-surface = Surface(win)
+
+#Menus
+game_selector = Game_Selector(win)
+main_menu = Main_Menu(win)
 
 running = True
 while running:
   
     if current_menu == "MainMenu":
-        pygame.display.set_caption(current_menu)
-        win.fill((41,43,47)) # MainMenu Color
-        win.blit(menu_title, (text_pos("x_center",win,menu_title),60))
-        # win.blit(menu_title,(text_pos.width,text_pos.height)) # TITLE
-        win.blit(pygame.font.SysFont("impact", 30).render(str(int(clock.get_fps())), True, (237, 206, 104)), (10, 10)) # FPS
+        main_menu.render()
+        win.blit(main_menu.surface,(0,0))
         
-        if games_button.draw(win):
-            previous_menu = current_menu
-            current_menu = "GameSelector"
-            
-        if credits_button.draw(win):
-            pass
+        current_menu = main_menu.current_menu
 
     if current_menu == "GameSelector":
+        game_selector.render()
+        win.blit(game_selector.surface,(0,0))
         pygame.display.set_caption(current_menu)
-        win.fill((41,43,47)) # MainMenu Color
-        surface.render()
-
-        win.blit(surface.surface,(0,0))
-
+        current_menu = game_selector.current_menu
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
