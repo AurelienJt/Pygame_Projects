@@ -34,8 +34,10 @@ print("\n- Ah I see. Pleased to meet you", player_name.capitalize(), "!\n\n~Pres
 str(input())
 
 clearTerminal()
-
-answer = int(input("\n- Do you know the rules of Hangman?\n\n~Please enter 1 or 2~\n\n[1]: Yes\n[2]: No\n\n"))
+try :
+    answer = int(input("\n- Do you know the rules of Hangman?\n\n~Please enter 1 or 2~\n\n[1]: Yes\n[2]: No\n\n"))
+except ValueError:
+    print("Error. Please enter either 1 or 2")
 
 if answer == 2:
     clearTerminal()
@@ -88,8 +90,6 @@ while game_turns > 0:
     clearTerminal()
     print ("\n-------------------------------------------------------------------------\n")
     print(drawings[drawings_index],"\n")
-    print("DI:", drawings_index)
-    print("GT:", game_turns)
     print("Your word has", game_word_letters, "letters")
     print("\nYour guesses were :", guess_list, "\n")
 
