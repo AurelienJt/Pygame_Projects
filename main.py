@@ -17,6 +17,8 @@ clock = pygame.time.Clock()
 FPS = 60
 
 # general variables
+back_font = pygame.font.SysFont("arialblack", 40)
+back_button = LayeredButton("Game Library", 500, 80, (350, 220), 5, back_font, (255,0,0), (100, 100, 100), (41,43,47))
 current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
 previous_menu = ""
 
@@ -26,11 +28,13 @@ main_menu = Main_Menu(win)
 
 running = True
 while running:
+    if back_button.draw(win):
+        current_menu = previous_menu
   
     if current_menu == "MainMenu":
         main_menu.render()
         win.blit(main_menu.surface,(0,0))
-        
+        pygame.display.set_caption(current_menu)
         current_menu = main_menu.current_menu
 
     if current_menu == "GameSelector":
