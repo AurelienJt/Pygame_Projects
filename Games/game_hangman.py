@@ -4,7 +4,7 @@ import time
 import os
 import json
 from random import randint
-from Libraries.Lib_Hangman.lib_hangman import clear_terminal,game_rules,loading_dots,win_drawing,drawings,recursive_check_rules,recursive_check_guess,win
+from Libraries.Lib_Hangman.lib_hangman import clear_terminal,game_rules,loading_dots,win_drawing,drawings, recursive_check_guess, recursive_check_rules
 
 #----------- Init -----------#
 dictionnary_path = os.path.join("Libraries", "Lib_Hangman","lib_dict_hangman.json")
@@ -34,6 +34,8 @@ time.sleep(0.5)
 print("\n- Ah I see. Pleased to meet you", player_name.capitalize(), "!\n\n~Press [Enter] to continue~")
 str(input())
 
+clear_terminal()
+
 recursive_check_rules()
 
 clear_terminal()
@@ -61,7 +63,13 @@ while game_turns > 0:
             unknown_letters += 1
 
     if unknown_letters == 0:
-        win()        
+        clear_terminal()
+
+        print ("\n-------------------------------------------------------------------------")
+        print(win_drawing, "\n")
+        print("Good job, you won in", total_turns, "turns !! \nThe word was", game_word, "\n\n")
+        
+        break            
 
     recursive_check_guess()
     guess_list += guess_letter             
@@ -76,10 +84,10 @@ while game_turns > 0:
     if guess_letter not in game_word:  
         game_turns -= 1     
         drawings_index += 1   
-        print("Bummer, you're wrong..")  
-        print("You have", + game_turns, "guesses left !\n")
+        print ("Bummer, you're wrong..")  
+        print ("You have", + game_turns, "guesses left !\n")
  
         if game_turns == 0:
-            print("You killed him, what a horrible person you are...\nThe word was", game_word, "\n")
+            print ("You killed him, what a horrible person you are...\nThe word was", game_word, "\n")
 
 #-------- Made by _N1ghtW0lf --------#
