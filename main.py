@@ -23,7 +23,7 @@ menu_title_font = pygame.font.SysFont("arialblack", 60)
 games_button = LayeredButton("Game Library", 500, 80, (350, 220), 5, menu_button_font, (41,43,47), (100, 100, 100), (41,43,47))
 credits_button = LayeredButton("Credits", 500, 80, (350 ,420), 5, menu_button_font, (41,43,47), (100,100,100), (41,43,47))
 
-menu_title = menu_title_font.render("MultiGameBox", True, (255,255,255))
+menu_title = menu_title_font.render("Pygame Projects", True, (255,255,255))
 
 # general variables
 current_menu = "MainMenu" # MainMenu, Hangman, Tetris, etc...
@@ -48,14 +48,11 @@ while running:
             pass
 
     if current_menu == "GameSelector":
+        pygame.display.set_caption(current_menu)
         win.fill((41,43,47)) # MainMenu Color
         surface.render()
 
-        
         win.blit(surface.surface,(0,0))
-
-        # if honai_button.draw(win):
-        #     pass
 
 
     for event in pygame.event.get():
