@@ -17,6 +17,7 @@ with open(file=dictionnary_path,mode="r") as file:
 game_word = word_list[randint(0,len(word_list)-1)]
 game_word_letters = len(game_word)
 guess_list = ''
+guess_letter = ''
 game_turns = 9
 drawings_index = 0
 total_turns = 0
@@ -36,15 +37,6 @@ str(input())
 clear_terminal()
 
 recursive_check_rules()
-answer = int(input("\n- Do you know the rules of Hangman?\n\n~Please enter 1 or 2~\n\n[1]: Yes\n[2]: No\n\n"))
-
-if answer == 2:
-    clear_terminal()
-
-    print("\n- Here are the rules !\n")
-    print(game_rules, "\n~Press [Enter] to continue~\n")
-    str(input())
-
 
 clear_terminal()
 loading_dots()
@@ -79,18 +71,13 @@ while game_turns > 0:
         
         break            
 
-    guess_letter = input("\n\nGuess a character : ")
-    if len(guess_letter) > 1:
-        print("Only insert one character please.")
-        exit()
+    recursive_check_guess()
     guess_list += guess_letter             
     total_turns += 1
 
     clear_terminal()
     print ("\n-------------------------------------------------------------------------\n")
     print(drawings[drawings_index],"\n")
-    print("DI:", drawings_index)
-    print("GT:", game_turns)
     print("Your word has", game_word_letters, "letters")
     print("\nYour guesses were :", guess_list, "\n")
 
