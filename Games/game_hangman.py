@@ -39,7 +39,7 @@ recursive_check_rules()
 clear_terminal()
 loading_dots()
 print("\n- Well, let's play !\n")
-time.sleep(0.5)
+time.sleep(0.5)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 卍
 clear_terminal()
 
 #------------- GAME -------------#
