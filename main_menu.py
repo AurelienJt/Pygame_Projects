@@ -21,6 +21,7 @@ class Main_Menu():
         
     def render(self):
         self.surface.blit(self.menu_title, (text_pos("x_center",self.surface,self.menu_title),60))
+        self.current_menu = self.menu_id
         
         if self.games_button.draw(self.surface):
             self.current_menu = "GameSelector"

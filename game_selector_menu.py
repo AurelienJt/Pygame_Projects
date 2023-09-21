@@ -41,6 +41,7 @@ class Game_Selector:
         )
         
     def render(self):
+        self.current_menu = self.menu_id
         #Rendering
         self.surface.blit(self.text, (text_pos("x_center", self.surface, self.text),60))
         if self.game_honai_button.draw(self.surface):
