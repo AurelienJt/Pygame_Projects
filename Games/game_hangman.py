@@ -1,93 +1,84 @@
 #----------- IMPORTS -----------#
-
 import time
 import os
 import json
 from random import randint
 from Libraries.Lib_Hangman.lib_hangman import clear_terminal,game_rules,loading_dots,win_drawing,drawings, recursive_check_guess, recursive_check_rules
-
-#----------- Init -----------#
+#----------- init -----------#
 dictionnary_path = os.path.join("Libraries", "Lib_Hangman","lib_dict_hangman.json")
 
 with open(file=dictionnary_path,mode="r") as file:
     word_list = json.load(file)
-
-#---------- VARIABLES ----------#
-
-game_word = word_list[randint(0,len(word_list)-1)]
-game_word_letters = len(game_word)
-guess_list = ''
-guess_letter = ''
-game_turns = 9
-drawings_index = 0
+#----------- main -----------#
 total_turns = 0
+word = word_list[randint(0,len(word_list))]
+guess_list = ''
 
-#------------- MAIN -------------#
-os.system('clear')
+run = True
+
+class Hangman():
+    def __init__(self):
+        self.word = "turtle"
+        self.known_letters = 0
+        self.player_lives = 9
+        self.total_turns = 0
+        self.guess_list = ''
+        self.finished = False
+
+    def play(self, word:str, guess:str):
+        self.guess = guess
+        self.word = word
+
+        self.total_turns += 1
+        Hangman.check_guess(self)
+        Hangman.check_won(self)
 
 
-print("\n- Welcome to Hangman !\n")
-time.sleep(1)
-print(game_word, "\n")
-player_name = str(input("- Please tell me, what is your name ?\n\n"))
-time.sleep(0.5)
-print("\n- Ah I see. Pleased to meet you", player_name.capitalize(), "!\n\n~Press [Enter] to continue~")
-str(input())
+    def check_guess(self):
+        self.guess_list += guess
+        if self.guess not in self.word:
+            self.player_lives -= 1
+            print(f"Bummer, that was not in the word, you have {self.player_lives} lives left.")
+            str(input("~Press [Enter]~"))
+        else:
+            if self.guess == self.word:
+                print(f"You win ! You won in {self.total_turns} turns")
+                exit()
+            print(f"Good job ! {self.guess} was in the word")
+            str(input("~Press [Enter]~"))
 
-clear_terminal()
+    def check_won(self):
+        self.known_letters = 0
 
-recursive_check_rules()
+        for character in self.word:
+            if character in self.guess_list:
+                self.known_letters += 1
 
-clear_terminal()
-loading_dots()
-print("\n- Well, let's play !\n")
-time.sleep(0.5)
-clear_terminal()
+        if self.known_letters == len(self.word):
+            self.finished = True
+    
 
-#------------- GAME -------------#
+    def display(self, guess_list:str):
+        self.guess_list = guess_list
 
-#print ("\n-------------------------------------------------------------------------\n")
-#print(startDrawing,"\n")
-#print("Your word has", game_word_letters, "letters")
-#print("\nYour guesses were :", guess_list, "\n")
+        for character in self.word:
+            if character in self.guess_list:
+                print(f"{character} ", end="")
+            else:
+                print("_ ", end="")
 
-while game_turns > 0:
-    unknown_letters = 0
 
-    for characters in game_word:        
-        if characters in guess_list:
-            print(characters + " ", end="")
+game_hangman = Hangman()
 
-        else :
-            print("_ ", end="")
-            unknown_letters += 1
-
-    if unknown_letters == 0:
-        clear_terminal()
-
-        print ("\n-------------------------------------------------------------------------")
-        print(win_drawing, "\n")
-        print("Good job, you won in", total_turns, "turns !! \nThe word was", game_word, "\n\n")
-        
-        break            
-
-    recursive_check_guess()
-    guess_list += guess_letter             
-    total_turns += 1
-
+while run:
     clear_terminal()
-    print ("\n-------------------------------------------------------------------------\n")
-    print(drawings[drawings_index],"\n")
-    print("Your word has", game_word_letters, "letters")
-    print("\nYour guesses were :", guess_list, "\n")
+    game_hangman.display(guess_list=guess_list)
+    guess = input("\n\nGuess a character : ")
+    guess_list += guess
+    game_hangman.play(guess=guess, word=word)
 
-    if guess_letter not in game_word:  
-        game_turns -= 1     
-        drawings_index += 1   
-        print ("Bummer, you're wrong..")  
-        print ("You have", + game_turns, "guesses left !\n")
- 
-        if game_turns == 0:
-            print ("You killed him, what a horrible person you are...\nThe word was", game_word, "\n")
-
+    if game_hangman.finished:
+        clear_terminal()
+        print(f"You won ! You won in {total_turns} turns !")
+        run = False
 #-------- Made by _N1ghtW0lf --------#
