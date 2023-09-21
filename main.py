@@ -3,8 +3,8 @@ from sys import exit
 import copy
 from Libraries.Lib_General.lib_button import LayeredButton
 from Libraries.Lib_General.lib_general import text_pos,button_pos
-from game_selector_menu import Game_Selector
-from main_menu import Main_Menu
+from Libraries.Windows.game_selector_menu import Game_Selector
+from Libraries.Windows.main_menu import Main_Menu
 
 pygame.init()
 
