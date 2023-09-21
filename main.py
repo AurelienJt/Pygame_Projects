@@ -37,7 +37,6 @@ while running:
         main_menu.render()
         win.blit(main_menu.surface,(0,0))
         pygame.display.set_caption(current_menu)
-        print(main_menu.current_menu)
         current_menu = main_menu.current_menu
 
     if current_menu == "GameSelector":
@@ -47,9 +46,7 @@ while running:
         current_menu = game_selector.current_menu
         
     if back_button.draw(win):
-        print(previous_menu)
         current_menu = previous_menu[-2]
-        print(current_menu)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
