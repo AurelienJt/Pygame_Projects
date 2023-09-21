@@ -17,6 +17,7 @@ win = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 FPS = 60
 
+
 # general variables
 back_font = pygame.font.SysFont("arialblack", 40)
 back_button = LayeredButton("X", 50, 50, (20, 20), 5, back_font, (255,0,0), (100, 100, 100), (41,43,47))
@@ -26,6 +27,7 @@ previous_menu = ["MainMenu"]
 #Menus
 game_selector = Game_Selector(win)
 main_menu = Main_Menu(win)
+
 
 running = True
 while running:
