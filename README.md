@@ -1,5 +1,5 @@
 # Pygame_Projects
-Pygame_Projects (this name mid asf ngl) is a repository of python games meant to be executable on any machine.
+Pygame_Projects is a repository of python games meant to be executable on any machine.
 
 # Quick Start Guide
 We currently don't have any official releases, so:
