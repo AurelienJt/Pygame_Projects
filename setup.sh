@@ -5,4 +5,4 @@
 
 pip3 install pygame
 
-echo "installed all dependencies."
+echo "Installed all dependencies."
