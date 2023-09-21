@@ -2,7 +2,13 @@
 import time
 import os
 import json
+import sys
 from random import randint
+
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+sys.path.append(parent)
+
 from Libraries.Lib_Hangman.lib_hangman import clear_terminal,game_rules,loading_dots,win_drawing,drawings, recursive_check_guess, recursive_check_rules
 #----------- init -----------#
 dictionnary_path = os.path.join("Libraries", "Lib_Hangman","lib_dict_hangman.json")
