@@ -47,8 +47,9 @@ while running:
         pygame.display.set_caption(current_menu)
         current_menu = game_selector.current_menu
         
-    if back_button.draw(win):
-        current_menu = previous_menu[-2]
+    if current_menu != "MainMenu":
+        if back_button.draw(win):
+            current_menu = previous_menu[-2]
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
