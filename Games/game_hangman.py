@@ -15,6 +15,8 @@ dictionnary_path = os.path.join("Libraries", "Lib_Hangman","lib_dict_hangman.jso
 
 with open(file=dictionnary_path,mode="r") as file:
     word_list = json.load(file)
+#----------- dialog -----------#
+
 #----------- main -----------#
 total_turns = 0
 word = word_list[randint(0,len(word_list))]
