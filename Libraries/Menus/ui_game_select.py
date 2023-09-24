@@ -45,7 +45,7 @@ class Game_Selector:
         #Rendering
         self.surface.blit(self.text, (text_pos("x_center", self.surface, self.text),60))
         if self.game_honai_button.draw(self.surface):
-            pass
+             self.current_menu = "Hanoi"
         if self.game_hangman_button.draw(self.surface):
             pass
         

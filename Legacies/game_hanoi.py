@@ -50,15 +50,15 @@ class Hanoi():
         """
         return output
 
-game_1 = Hanoi()
+# game_1 = Hanoi()
 
-while run:
-    print(game_1.display())
-    print("Next Turn...\n")
-    sender = input("Sender: ")
-    destination = input("Destination: ")
+# while run:
+#     print(game_1.display())
+#     print("Next Turn...\n")
+#     sender = input("Sender: ")
+#     destination = input("Destination: ")
     
-    game_1.play(sender=sender,destination=destination)
-    if game_1.finished:
-        print("You won")
-        run = False
+#     game_1.play(sender=sender,destination=destination)
+#     if game_1.finished:
+#         print("You won")
+#         run = False
