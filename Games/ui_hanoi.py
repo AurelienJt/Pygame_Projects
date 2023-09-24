@@ -3,17 +3,6 @@ from Legacies.game_hanoi import Hanoi
 from Libraries.Lib_General.lib_general import *
 from Libraries.Lib_General.lib_button import LayeredButton
 
-# pygame.init()
-
-# window.get_width() = 1200
-# HEIGHT = 600
-
-# info = pygame.display.Info()
-# win = pygame.display.set_mode((window.get_width(), HEIGHT))
-# clock = pygame.time.Clock()
-# FPS = 60
-# running = True
-
 
 class UI_Hanoi:
     def __init__(self, window):
@@ -202,16 +191,11 @@ class UI_Hanoi:
                 self.row_small = key
                 self.layer_small = value_list.index("small") + 1
 
-        print(self.poles)
-
     def move(self):
         if len(self.poles[self.transit[0]]) > 0:
             target = self.poles[self.transit[0]][-1]
             self.poles[self.transit[0]].pop(-1)
             self.poles[self.transit[1]].append(target)
-
-        print(self.row_big)
-        print(self.layer_big)
 
     def check_rule(self):
         try:
@@ -235,7 +219,7 @@ class UI_Hanoi:
 
     def render(self):
         self.current_menu = self.menu_id
-        
+
         self.surface.fill((41, 43, 47))
         for self.i in range(3):
             pygame.draw.rect(
@@ -248,7 +232,6 @@ class UI_Hanoi:
                     self.POLE_HEIGHT,
                 ),
             )
-
 
         pygame.draw.rect(
             self.surface,
@@ -321,18 +304,18 @@ class UI_Hanoi:
         self.surface.blit(
             self.menu_title, (text_pos("x_center", self.surface, self.menu_title), 60)
         )
-        
+
         if self.transit[0] is not None:
-            self.sender_message = self.button_font.render(str(self.transit[0]+1),True,(255,255,255))
-            self.surface.blit(
-                self.sender_message,(70,400)
+            self.sender_message = self.button_font.render(
+                str(self.transit[0] + 1), True, (255, 255, 255)
             )
-        
+            self.surface.blit(self.sender_message, (70, 400))
+
         if self.transit[1] is not None:
-            self.destination_message = self.button_font.render(str(self.transit[1]+1),True,(255,255,255))
-            self.surface.blit(
-                self.destination_message,(1100,400)
+            self.destination_message = self.button_font.render(
+                str(self.transit[1] + 1), True, (255, 255, 255)
             )
+            self.surface.blit(self.destination_message, (1100, 400))
 
         # Finish Screen
         if UI_Hanoi.check_won(self):
@@ -345,18 +328,3 @@ class UI_Hanoi:
                 UI_Hanoi.update(self)
         self.current_menu = self.menu_id
         return self.surface
-
-
-# v1 = UI_Hanoi(win)
-
-# while running:
-#     win.blit(v1.render(), (0, 0))
-
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             running = False
-#             pygame.quit()
-#             exit()
-
-#     clock.tick(FPS)
-#     pygame.display.update()
