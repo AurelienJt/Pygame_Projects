@@ -1,5 +1,5 @@
 import pygame
-from Games.game_hanoi import Hanoi
+from Legacies.game_hanoi import Hanoi
 from Libraries.Lib_General.lib_general import *
 from Libraries.Lib_General.lib_button import LayeredButton
 

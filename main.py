@@ -6,7 +6,7 @@ from Libraries.Lib_General.lib_general import text_pos,button_pos
 from Libraries.Menus.ui_game_select import Game_Selector
 from Libraries.Menus.ui_menu import Main_Menu
 
-from ui_hanoi import UI_Hanoi
+from Games.ui_hanoi import UI_Hanoi
 
 pygame.init()
 
