@@ -1,4 +1,11 @@
 import pygame
+import os
+import sys
+
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+sys.path.append(parent)
+
 from Legacies.game_hanoi import Hanoi
 from Libraries.Lib_General.lib_general import *
 from Libraries.Lib_General.lib_button import LayeredButton
