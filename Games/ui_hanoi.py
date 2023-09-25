@@ -181,7 +181,7 @@ class UI_Hanoi:
             "Tour d'Hanoi", True, (255, 255, 255)
         )
         self.finish_message = self.menu_title_font.render(
-            "You won! (Kinda easy game...)", True, (255, 0, 0)
+            "You won!", True, (255, 0, 0)
         )
 
     def update(self):
